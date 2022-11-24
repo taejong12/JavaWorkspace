@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>JspStudyPrac</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  <context-param>
+  	<param-name>INIT_PARAM</param-name>
+  	<param-value>배포서술자에 저장된 초기화 매개변수</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>OracleDriver</param-name>
+  	<param-value>oracle.jdbc.OracleDriver</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>OracleUrl</param-name>
+  	<param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>OracleId</param-name>
+  	<param-value>gang</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>OraclePw</param-name>
+  	<param-value>1234</param-value>
+  </context-param>
+  
+  <context-param>
+     <param-name>PAGE_SIZE</param-name>
+     <param-value>10</param-value>
+  </context-param>
+  
+  <context-param>
+     <param-name>PAGING_BLOCK</param-name>
+     <param-value>5</param-value>
+  </context-param>
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/02ImplicitObject/Exception.jsp</location>
+  </error-page>
+  
+   <error-page>
+  	<error-code>405</error-code>
+  	<location>/02ImplicitObject/Exception.jsp</location>
+  </error-page>
+  
+   <error-page>
+  	<error-code>500</error-code>
+  	<location>/02ImplicitObject/Exception.jsp</location>
+  </error-page>
+  
+  <filter>
+  	<filter-name>SetCharEncoding</filter-name>
+  	<filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+  	<init-param>
+  		<param-name>encoding</param-name>
+  		<param-value>utf-8</param-value>
+  	</init-param>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>SetCharEncoding</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- 서블릿클래스를 web.xml에 등록해주고 등록한 서블릿하고 외부에서 접근해올 때 
+  	브라우저 주소인 url 패턴을 기본으로 해서 접근을 하는데 
+  	자바소스와 같이 맵핑을 해주는 것이 서블릿 맵핑이다
+  	서블릿과 url을 맵핑하여 매칭해야 한다 -->
+  <servlet>
+  	<!-- 서블릿 클래스 -->
+  	<servlet-name>FirstServlet</servlet-name>
+  	
+  	<!-- servlet.FirstServlet(패키지명.클래스명) -->
+  	<servlet-class>servlet.FirstServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<!-- 서블릿 클래스 -->
+  	<servlet-name>FirstServlet</servlet-name>
+  	
+  	<!-- 접근 브라우저 url 주소 -->
+  	<url-pattern>/13Servlet/FirstServlet.do</url-pattern>
+  </servlet-mapping>
+  
+
+  <!--  서블릿과 나중에 요청할 때 리퀘스트로 사용할 url 주소
+  서블릿 클래스로 연결을 시켜준다
+  서블릿은 패키지명이다
+
+  확인을 한다
+  매칭이 되면 서블릿 네임을 확인해서 서블릿 클래스와 연동을 시켜준다
+  연동된 자바소스로 먼저 온다
+  리퀘스트랑 리스폰스를 받고 보내주는 기능
+  자바갔다가 온다-->
+  
+    <!-- 서블릿자바소스를 만들고 인터넷 브라우저 상에서 주소를 통해서 자바서블릿으로 접근할 수 있다
+  접근을 위해서 첫번째 방법은 web.xml에 셋팅을 해준다
+  주소를 맵핑해주면 연결된 서블릿자바소스로 연동이 된다 -->
+  
+  
+  <!-- 서블릿 등록하기 -->
+  <servlet>
+  
+  	<!-- 서블릿 이름과 클래스 등록 -->
+  	<servlet-name>ServletView</servlet-name>
+  	
+  	<!-- .자바 파일이 아닌 .클래스 파일을 호출한다 -->
+  	<servlet-class>servlet.ServletView</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ServletView</servlet-name>
+  	
+  	<!-- /13Servlet/(아무런 역할 없음) jsp로 가는게 아니라 
+  	url-pattern 양식을 맞춰주기 위해서 작성 -->
+  	<url-pattern>/13Servlet/ServletView.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 디비상에 들어가 있는 값을 기준으로 체크한다 -->
+  
+  <servlet>
+  	<servlet-name>MemberAuth</servlet-name>
+  	<servlet-class>servlet.MemberAuth</servlet-class>
+  	<init-param>
+  		<param-name>manager_id</param-name>
+  		<param-value>manager</param-value>
+  	</init-param>
+  </servlet>
+
+  <servlet-mapping>
+  	<servlet-name>MemberAuth</servlet-name>
+  	<url-pattern>/13Servlet/MemberAuth.mvc</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>M2BoardList</servlet-name>
+  	<servlet-class>m2board.ListController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>M2BoardList</servlet-name>
+  	<url-pattern>/m2board/list.do</url-pattern>
+  </servlet-mapping>
+  
+  
+	
+	<servlet>
+		<servlet-name>M2BoardWrite</servlet-name>
+		<servlet-class>m2board.WriteController</servlet-class>
+	</servlet>  
+  
+  	<servlet-mapping>
+  		<servlet-name>M2BoardWrite</servlet-name>
+  		<url-pattern>/m2board/write.do</url-pattern>
+  	</servlet-mapping>
+  
+	<context-param>
+		<param-name>maxPostSize</param-name>
+		<param-value>1024000</param-value>
+	</context-param>
+  
+   <!-- <context-param>
+  	<param-name>CHAT_ADDR</param-name>
+  	<param-value>ws://192.168.0.2:8081/JspStudy</param-value>
+  </context-param>-->
+  
+  
+<context-param>
+  	<param-name>CHAT_ADDR</param-name>
+  	<param-value>ws://localhost:8081/JspStudyPrac</param-value>
+  </context-param>
+  
+  
+  
+  
+  
+  
+  
+  
+</web-app>

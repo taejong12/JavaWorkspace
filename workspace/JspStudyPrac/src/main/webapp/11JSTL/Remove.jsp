@@ -1,0 +1,47 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<!-- 변수 선언 -->
+<c:set var="scopeVar" value="Page Value" />
+<c:set var="scopeVar" value="Request Value" scope="request" />
+<c:set var="scopeVar" value="Session Value" scope="session" />
+<c:set var="scopeVar" value="Application Value" scope="application" />
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSTL core remove</title>
+</head>
+<body>
+	
+	<ul>
+		<li>scopeVar : ${ scopeVar }</li>
+		<li>requestScope.scopeVar : ${ requestScope.scopeVar }</li>
+		<li>sessionScope.scopeVar : ${ sessionScope.scopeVar }</li>
+		<li>applicationScope.scopeVar : ${ applicationScope.scopeVar }</li>
+	</ul>
+	
+	<!-- 스코프바를 어디서 지우겠냐 스코프영역 -->
+	<c:remove var="scopeVar" scope="session" />
+	
+	<ul>
+		<li>sessionScope.scopeVar : ${ sessionScope.scopeVar }</li>
+	</ul>
+	
+	<!-- 리무브 바 스코프만 적으면 스코프이름을 가진 값들은 전체영역에서 다 지워진다-->
+	<!-- 해당하는 영역에 값이 없다면 page영역부터 지워진다-->
+	<c:remove var="scopeVar" />
+	
+	<ul>
+		<li>scopeVar : ${ scopeVar }</li>
+		<li>requestScope.scopeVar : ${ requestScope.scopeVar }</li>
+		<li>applicationScope.scopeVar : ${ applicationScope.scopeVar }</li>
+	</ul>
+	
+	
+</body>
+</html>
+
+

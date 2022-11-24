@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd ">
+  <tlib-version>1.0</tlib-version>
+  <short-name>mytag</short-name>
+  
+  <!-- isNumber 메서드를 태그라이브러리에 연동하기 위한 작업-->
+  <function>
+  
+  	<!-- utils.ELUtils 의 메서드명-->
+  	<name>isNumber</name>
+  	
+  	<!--utils 패키지의 ELUtils 클래스, 함수의 위치-->
+  	<function-class>utils.ELUtils</function-class> 
+  	
+  	<!--리턴값 타입, 매개변수 타입 -->  
+  	<!-- 리턴값 타입:boolean 메서드명:isNumber 매개변수 타입:(java.lang.String) -->
+  	<function-signature>boolean isNumber(java.lang.String)</function-signature>
+  </function>
+</taglib>

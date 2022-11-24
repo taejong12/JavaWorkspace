@@ -1,0 +1,24 @@
+Design pattern
+MVC model
+Model : 업무처리 로직(비지니스 로직), DB 관련 작업
+View : client 에게 보여지는 부분 (jsp 태그, 스크립트, css)
+Controller : 모델과 뷰를 제어하는 역할 
+
+MVC 
+Model1
+직렬하는 방식 
+구조 단순
+
+Model2
+
+해당하는 소프트웨어를 어떻게 구현해 놓을 것인가 디자인 패턴 중에 하나
+
+
+
+데이터를 담기 위한 객체 DTO
+DAO는 DB랑 연결
+
+
+
+
+

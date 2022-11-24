@@ -1,0 +1,44 @@
+Action tag
+JSP 표준태그
+XML 표준문법
+시작-종료
+주석 X 표현식 <%= %>
+<jsp:include> : 외부 파일을 현재 파일 포함
+	<%@ include file="path"%> : 지시어
+	액션태그는 지시어랑 다르게 갔다가 돌아오기 때문에 
+<jsp:forward> : 다른 페이지로 요청 넘김
+	request.getRequestDispatcher().forward(request, response): 다른 페이지로 요청 넘김
+
+	RequestDispatcher rd = request.getRequestDispatcher("포워딩할 파일 경로");
+	rd.forward(request, response);
+
+
+<jsp:useBean>, <jsp:setProperty>, <jsp:getProperty>
+	:자바빈즈 생성 값 할당 불러오기
+	JSP의 표준 액션 태그로 접근할 수 있는 자바 클래스로서 값을 가지는 속성(멤버변수)과 값을 설정하는 메소드(setter), 값을 추출하는 메소드(getter)로 이루어져 있습니다.
+	자바빈즈-멤버변수 게터 세터 메소드 클래스
+	<jsp:useBean id="구분자" class="대상클래스" scope="기본값 page 저장될 영역" />
+	<jsp:setProperty name="자바빈즈 id" property="속성명(멤버변수명)">
+	<jsp:getProperty name="자바빈즈 id" property="속성명(멤버변수명)">
+	
+<jsp:param>: 다른 페이지로 매개변수 전달
+	<jsp:include>,<jsp:forward> 와 함께 사용
+
+
+화면이동
+<jsp:forward page="이동할_페이지명" />
+RequestDispatcher.forward
+
+javascropt location.href, location.replace
+location.href="이동할_페이지명"
+history.back() --> 이전 페이지로 이동
+history.go(-1) --> 이전 페이지로 이동
+history.forward() --> 다음 페이지로 이동
+
+response.sendRedirect("이동할_페이지명");
+<meta http-equiv=refresh content="<time>
+
+
+
+
+

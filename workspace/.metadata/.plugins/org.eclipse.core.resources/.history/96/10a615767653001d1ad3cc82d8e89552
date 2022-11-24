@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+</head>
+
+<body>
+	<form>
+		아이디: <input type="text" name="id" placeholder="아이디입력"/> <br/>
+		비밀번호: <input type="password" name="pw" placeholder="비밀번호입력"/> <br/>
+		비밀번호재확인: <input type="password" name="pwok" placeholder="비밀번호재확인"/> <br/>
+		이름: <input type="text" name="name" placeholder="이름입력" /> <br/>
+		생년월일: <input type="date" name="date" /> <br/>
+		성별: 
+			<input type="radio" name="gender" checked/>남자
+			<input type="radio" name="gender" />여자 <br/>
+		나이: <input type="number" name="age" placeholder="나이입력" /> <br/>
+		거주지역: 
+		<select>
+			<option>서대문구</option>
+			<option>마포구</option>
+			<option>서초구</option>
+			<option>종로구</option>
+			<option>영등포구</option>
+			<option>용산구</option>
+		</select>
+		<br/>
+		전화번호: <input type="tel" name="telnum"/>
+		메일: <input type="email" name="email" />
+		
+		
+	</form>
+
+</body>
+</html>

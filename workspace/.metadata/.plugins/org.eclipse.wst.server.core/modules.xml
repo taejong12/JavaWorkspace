@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<modules>
+  <module moduleId="org.eclipse.jst.jee.server:MProject" serverId="ApacheTomcatv9.0study at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:MProjectMatching" serverId="ApacheTomcatv9.0study at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:JspStudyPrac" serverId="ApacheTomcatv9.0study at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:ProjectMidResult" serverId="ApacheTomcatv9.0study at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:practiceProjec" serverId="ApacheTomcatv9.0study at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:PracHomeStudy" serverId="ApacheTomcatv9.0study at localhost"/>
+</modules>

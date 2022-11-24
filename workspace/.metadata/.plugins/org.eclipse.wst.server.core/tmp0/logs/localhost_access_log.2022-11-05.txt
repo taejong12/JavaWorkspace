@@ -1,0 +1,4 @@
+127.0.0.1 - - [05/Nov/2022:18:30:28 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [05/Nov/2022:18:30:29 +0900] "GET /ProjectMidJoin/01MainPage/MainPage.jsp HTTP/1.1" 200 12875
+0:0:0:0:0:0:0:1 - - [05/Nov/2022:18:30:29 +0900] "GET /ProjectMidJoin/img/MProjectLogo.png HTTP/1.1" 200 7959
+0:0:0:0:0:0:0:1 - - [05/Nov/2022:18:30:29 +0900] "GET /favicon.ico HTTP/1.1" 404 818

@@ -1,0 +1,11 @@
+1666659187258	Rename package 'ConnectPool'
+1666665039462	Move 'ConnectPool' to 'webapp'
+1666773828378	Delete element
+1666774024619	Rename resource 'SingUpProcess.jsp'
+1666829277295	Delete element
+1666829284777	Delete element
+1666829288451	Delete element
+1666829301204	Delete element
+1666829459455	Rename resource 'SingUpWrite.jsp'
+1666832917089	Rename type 'SingUpWriteController'
+1666922915971	Move 'MainPage.jsp' to 'MainPage'
